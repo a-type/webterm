@@ -2,9 +2,10 @@
   "name": "webterm",
   "version": "0.0.1",
   "description": "Because even terminal needs node. It's true.",
-  "main": "views/index.html",
+  "main": "lib/main.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt",
+    "start": "electron lib/main.js"
   },
   "repository": {
     "type": "git",
@@ -20,12 +21,26 @@
   },
   "homepage": "https://github.com/a-type/webterm",
   "devDependencies": {
+    "chai": "^3.2.0",
     "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-exec": "^0.4.6",
-    "grunt-node-webkit-builder": "^0.2.2"
+    "grunt-jscs": "^2.0.0",
+    "grunt-mocha-istanbul": "^3.0.1",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-node-webkit-builder": "^0.2.2",
+    "istanbul": "^0.3.17",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.4"
   },
   "dependencies": {
-    "jquery": "^2.1.1",
+    "bluebird": "^2.9.34",
+    "ecstatic": "^0.8.0",
+    "grunt-contrib-less": "^1.0.1",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1",
     "shelljs": "^0.3.0"
   }
 }
