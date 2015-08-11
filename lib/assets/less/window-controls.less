@@ -1,0 +1,22 @@
+.window-close {
+	width: 32px;
+	height: 32px;
+	color: @color-default-fg;
+	cursor: pointer;
+}
+
+.titlebar {
+	position: fixed;
+	display: flex;
+	justify-content: flex-end;
+	top: 0;
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	background: fade(darken(@color-default-bg, 2%), 40%);
+	color: @color-default-fg;
+}
+
+.titlebar-title {
+	margin: 0 16px;
+}

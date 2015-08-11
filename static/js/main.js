@@ -57,4 +57,9 @@ $(function () {
 		$stdout.append($(errorTpl(data)));
 		resetInput();
 	});
+
+	var $windowClose = $(".window-close");
+	$windowClose.click(function () {
+		process.exit();
+	});
 });
