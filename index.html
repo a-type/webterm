@@ -5,10 +5,23 @@
     <link rel="stylesheet" href="static/css/style.css"/>
   </head>
   <body>
-    <input id="stdin" />
-    <div id="stdout">
-
+    <div class="main-display">
+      <div id="stdout"><input id="stdin" size="1"/></div>
     </div>
+
+    <script id="promptTemplate" type="text/template">
+      <div class="prompt">
+        <span class="cwd"><%= cwd %></span>
+        <span class="prompt-separator"><%= separator %></span>
+        <div class="prompt-decoration"></div>
+      </div>
+    </script>
+    <script id="outputTemplate" type="text/template">
+      <div class="output-line"><%= text %></div>
+    </script>
+    <script id="errorTemplate" type="text/template">
+      <div class="output-line error-output"><%= text %></div>
+    </script>
 
     <script src="static/js/main.js"></script>
   </body>
