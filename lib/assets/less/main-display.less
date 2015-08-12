@@ -2,6 +2,32 @@
 	background: @color-default-bg;
 	color: @color-default-fg;
 	padding: 8px;
-	overflow: auto;
+	overflow-y: scroll;
+	overflow-x: auto;
 	height: 100%;
+
+	&::-webkit-scrollbar {
+		width: 12px;
+		margin-top: 32px;
+	}
+
+	&::-webkit-scrollbar:horizontal {
+		height: 12px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: fade(@color-default-bg-transparent, 4%);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: @color-default-bg-transparent;
+	}
+
+	&::-webkit-scrollbar-corner {
+		background: fade(@color-default-bg-transparent, 4%);
+	}
+
+	&::-webkit-scrollbar-resizer {
+		background: fade(@color-default-bg-transparent, 4%);
+	}
 }

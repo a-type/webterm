@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Webterm</title>
-    <link rel="stylesheet" href="static/css/style.css"/>
-  </head>
-  <body>
-    <div class="titlebar" style="-webkit-app-region: drag">
-      <div class="titlebar-title">Webterm</div>
-      <div class="window-close" style="-webkit-app-region: no-drag">&times;</div>
-    </div>
-    <div class="main-display">
-      <div id="stdout"><input id="stdin" size="1"/></div>
-    </div>
+	<head>
+		<title>Webterm</title>
+		<link rel="stylesheet" href="static/css/style.css"/>
+	</head>
+	<body>
+		<div class="window">
+			<div class="titlebar" style="-webkit-app-region: drag">
+				<div class="titlebar-title">Webterm</div>
+				<div class="window-close" style="-webkit-app-region: no-drag">&times;</div>
+			</div>
+			<div class="main-display">
+				<div id="stdout"><input id="stdin" size="1"/></div>
+			</div>
+		</div>
 
-    <script id="promptTemplate" type="text/template">
-      <div class="prompt">
-        <span class="cwd"><%= cwd %></span>
-        <span class="prompt-separator"><%= separator %></span>
-        <div class="prompt-decoration"></div>
-      </div>
-    </script>
-    <script id="outputTemplate" type="text/template">
-      <div class="output-line"><%= text %></div>
-    </script>
-    <script id="errorTemplate" type="text/template">
-      <div class="output-line error-output"><%= text %></div>
-    </script>
+		<script id="promptTemplate" type="text/template">
+			<div class="prompt">
+				<span class="cwd"><%= cwd %></span>
+				<span class="prompt-separator"><%= separator %></span>
+				<div class="prompt-decoration"></div>
+			</div>
+		</script>
+		<script id="outputTemplate" type="text/template">
+		  <div class="output-line"><%= text %></div>
+		</script>
+		<script id="errorTemplate" type="text/template">
+		  <div class="output-line error-output"><%= text %></div>
+		</script>
 
-    <script src="static/js/main.js"></script>
-  </body>
+		<script src="static/js/main.js"></script>
+	</body>
 </html>
