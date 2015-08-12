@@ -5,6 +5,8 @@ var Command = require("./lib/command");
 var Shell   = require("./lib/shell");
 var _       = require("lodash");
 
+window.$ = $;
+
 $(function () {
 	var shell = new Shell();
 
@@ -56,10 +58,5 @@ $(function () {
 	shell.on("err", function (data) {
 		$stdout.append($(errorTpl(data)));
 		resetInput();
-	});
-
-	var $windowClose = $(".window-close");
-	$windowClose.click(function () {
-		process.exit();
 	});
 });

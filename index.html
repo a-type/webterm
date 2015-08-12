@@ -3,12 +3,15 @@
 	<head>
 		<title>Webterm</title>
 		<link rel="stylesheet" href="static/css/style.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	</head>
 	<body>
 		<div class="window">
 			<div class="titlebar" style="-webkit-app-region: drag">
 				<div class="titlebar-title">Webterm</div>
-				<div class="window-close" style="-webkit-app-region: no-drag">&times;</div>
+				<div class="window-minimize" style="-webkit-app-region: no-drag"><i class="fa fa-minus"></i></div>
+				<div class="window-maximize" style="-webkit-app-region: no-drag"><i class="fa fa-square-o"></i></div>
+				<div class="window-close" style="-webkit-app-region: no-drag"><i class="fa fa-times"></i></div>
 			</div>
 			<div class="main-display">
 				<div id="stdout"><input id="stdin" size="1"/></div>
@@ -30,5 +33,6 @@
 		</script>
 
 		<script src="static/js/main.js"></script>
+		<script src="static/js/windowControls.js"></script>
 	</body>
 </html>

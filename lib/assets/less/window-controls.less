@@ -1,8 +1,41 @@
-.window-close {
-	width: 32px;
+.window-control-button {
+	width: 48px;
 	height: 32px;
 	color: @color-default-fg;
 	cursor: pointer;
+	position: relative;
+
+	&:hover {
+		background: fade(@color-default-fg, 4%);
+	}
+
+	i {
+		font-size: 9px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.window-close {
+	.window-control-button();
+
+	i {
+		font-size: 10px;
+	}
+}
+
+.window-maximize {
+	.window-control-button();
+}
+
+.window-minimize {
+	.window-control-button();
+
+	i {
+		top: 60%;
+	}
 }
 
 .titlebar {
