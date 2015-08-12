@@ -38,13 +38,6 @@ module.exports = function (grunt) {
 			coverage : {
 				src     : "test/unit",
 				options : {
-					check : {
-						statements : 100,
-						branches   : 100,
-						lines      : 100,
-						functions  : 100
-					},
-
 					mask      : "**/*_spec.js",
 					recursive : true
 				}
