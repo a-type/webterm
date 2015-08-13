@@ -17,6 +17,8 @@ $(function () {
 	var $stdin = $("#stdin");
 	var $stdout = $("#stdout");
 
+	$(".main-display").click(function () { $stdin.focus(); });
+
 	function resetInput () {
 		$stdin.remove();
 		$stdout.append($stdin);
