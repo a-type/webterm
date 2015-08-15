@@ -1,23 +1,11 @@
 "use strict";
 var Command = require("../../lib/command");
-var shelljs = require("shelljs");
 var Sinon   = require("sinon");
 var _       = require("lodash");
 
 var expect = require("chai").expect;
 
 describe("The Command object", function () {
-	var sandbox;
-
-	before(function () {
-		sandbox = Sinon.sandbox.create();
-		sandbox.stub(shelljs);
-	});
-
-	after(function () {
-		sandbox.restore();
-	});
-
 	describe("creating a command", function () {
 		describe("with no args or options", function () {
 			it("has correct data", function () {
@@ -65,20 +53,6 @@ describe("The Command object", function () {
 					sourceString : "ls -a -l / /usr"
 				});
 			});
-		});
-	});
-
-	describe("executing a command", function () {
-		before(function () {
-			(new Command("ls -al .")).exec();
-		});
-
-		after(function () {
-			shelljs.exec.reset();
-		});
-
-		it("passes the command to shell", function () {
-			expect(shelljs.exec.calledWith("ls -al .")).to.be.true;
 		});
 	});
 });
