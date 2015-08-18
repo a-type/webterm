@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	var browserWindow = remote.getCurrentWindow();
 
 	var $windowClose = document.getElementsByClassName("window-close")[0];
-	$windowClose.click(function () {
+	$windowClose.addEventListener("click", function () {
 		browserWindow.close();
 	});
 
 	var $windowMaximize = document.getElementsByClassName("window-maximize")[0];
-	$windowMaximize.click(function () {
+	$windowMaximize.addEventListener("click", function () {
 		if (browserWindow.isMaximized()) {
 			browserWindow.unmaximize();
 		}
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	var $windowMinimize = document.getElementsByClassName("window-minimize")[0];
-	$windowMinimize.click(function () {
+	$windowMinimize.addEventListener("click", function () {
 		browserWindow.minimize();
 	});
 });
