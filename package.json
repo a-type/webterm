@@ -39,7 +39,6 @@
     "bluebird": "^2.9.34",
     "ecstatic": "^0.8.0",
     "grunt-contrib-less": "^1.0.1",
-    "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "terminal.js": "^1.0.5"
   }
