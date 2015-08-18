@@ -2,15 +2,27 @@
 	<pre class="line-body"><%
 		var i;
 		var innerText;
-		for (i = 0; i < attributes.length; i++) {
-			innerText = _.escape(text.slice(attributes[i].start, attributes[i].end));
-			classes = _.reduce(attributes[i], function (accumulator, val, key) {
-				if (key !== "start" && key !== "end" && val) {
-					accumulator += key + " ";
+		var attributes = context.attributes;
+		var text = context.text;
+		var attrKeys = _.keys(attributes);
+		function printLineSegment(start, end, attributes) {
+			innerText = _.escape(text.slice(start, end));
+			classes = _.reduce(attributes, function (accumulator, val, key) {
+				if (val) {
+					accumulator += "attr-" + key + "-" + val + " ";
 				}
-			}).trim();
+			}) || "";
+			classes = classes.trim();
 
 			print("<span class='line-part " + classes + "'>" + innerText + "</span>");
 		}
+
+		for (i = 0; i < attrKeys.length - 1; i++) {
+			var nextKey = attrKeys[i + 1];
+			var currentAttribute = attributes[attrKeys[i]];
+			printLineSegment(attrKeys[i], nextKey, currentAttribute);
+		}
+
+		printLineSegment(attrKeys[attrKeys.length - 1], undefined, attributes[attrKeys.length - 1]);
 	%></pre>
 </div>
